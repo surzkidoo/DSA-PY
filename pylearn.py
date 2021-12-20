@@ -96,7 +96,26 @@ class LinkList():
             return True
         return False
 
+##
+class Queue:
+    size=0
+    data=[]
+    def __init__(self,data=None):
+        self.data=[]
+    def dequeue(self):
+        if self.size>0:
+            elem=self.data[0]
+            del self.data[0]
+            self.size-=1
+            return elem
+        return False
 
+    def enqueue(self,elem):
+        self.data.append(elem)
+        self.size+=1
+
+    def __str__(self):
+       return str(self.data)
 #singleton design pattern
 
 class Single:
@@ -110,5 +129,3 @@ class Single:
             Single.instance
     def get_instance(cls):
         return instance
-print(Single())
-print(Single())
